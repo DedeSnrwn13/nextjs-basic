@@ -1,7 +1,7 @@
 export default function Blog() {
     return (
         <div>
-            <p>blog page</p>
+            <h2>blog page</h2>
         </div>
     )
 }
