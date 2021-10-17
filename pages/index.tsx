@@ -1,22 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link';
-import Header from './../components/Header/index';
-import Footer from './../components/Footer/index';
+import Layout from '../components/Layout';
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
-    <div>
-      <Header />
-
+    <Layout>
       <h1 className={styles['title-homepage']}>Welcome Dede</h1>
-
-      <Footer />
-    </div>
-
+    </Layout>
   )
 }
-
-export default Home
