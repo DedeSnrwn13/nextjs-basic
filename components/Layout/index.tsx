@@ -2,21 +2,30 @@ import { ReactNode } from 'react';
 import Header from '../Header/index';
 import Footer from '../Footer/index';
 import styles from './Layout.module.css';
+import Head from 'next/head';
 
 interface LayoutProps {
     children: ReactNode;
+    pageTitle: string;
 }
 
 export default function Index(props: LayoutProps) {
-    const { children } = props;
+    const { children, pageTitle } = props;
 
     return (
-        <div className={styles.container}>
-            <Header />
+        <>
+            <Head>
+                <title>{pageTitle}</title>
+                <meta name="description" content="Website nextjs basic" />
+            </Head>
 
-            <div className={styles.content}>{children}</div>
+            <div className={styles.container}>
+                <Header />
 
-            <Footer />
-        </div>
+                <div className={styles.content}>{children}</div>
+
+                <Footer />
+            </div>
+        </>
     )
 }
